@@ -111,3 +111,41 @@ var angelJS = JSON.parse(angelJSON);
 console.log(angel);
 console.log(angelJSON);
 console.log(angelJS);
+
+
+// PROTOTYPE
+function Coche(marca, modelo, color) {
+  this.marca = marca;
+  this.modelo = modelo;
+  this.color = color;
+  // this.pintar = (nuevoColor) => {
+  //   this.color = nuevoColor;
+  // }
+}
+
+// Coche.prototype.pintar = (nuevoColor) => {
+Coche.prototype.pintar = function(nuevoColor) {
+  this.color = nuevoColor;
+}
+
+let tesla = new Coche('Tesla', 'Roadster', 'rojo');
+let audi = new Coche('Audi', 'A3', 'negro');
+console.log(tesla);
+console.log(audi);
+
+
+// REFERENCIAS
+let perro = {
+  nombre: 'Roko',
+  edad: 2
+}
+
+let perro1 = {...perro};
+perro1.edad = 3;
+console.log(perro);
+let perro2 = Object.assign({}, perro)
+
+let miArray = [1, 2, 3];
+let nuevoArray = [...miArray];
+nuevoArray.push(5);
+let otroArray = [].concat(miArray)
