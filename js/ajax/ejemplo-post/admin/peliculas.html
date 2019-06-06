@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Admin peliculas</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</head>
+<body>
+  <header>
+    <h1>Administración de péliculas</h1>
+    <nav>
+      <ul>
+        <li><a href="./generos.html">Géneros</a></li>
+        <li><a href="./peliculas.html">Péliculas</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <form>
+      <div>
+        <label for="desplegable-generos">Género:</label>
+        <!-- <input type="text" id="input-genero"> -->
+        <select name="generos" id="desplegable-generos">
+          <option value="0">-</option>
+        </select>
+      </div>
+      <div>
+        <label for="input-pelicula">Pélicula:</label>
+        <input type="text" id="input-pelicula">
+      </div>
+      <button type="submit" id="btn-guardar">Guardar</button>
+    </form>
+  </main>
+  <footer>
+    <p>Página hecha por Ángel Villalba 2019 😎</p>
+  </footer>
+
+  <script src="../js/peliculas.js"></script>
+
+</body>
+</html>
