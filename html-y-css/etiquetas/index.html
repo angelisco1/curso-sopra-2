@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <!-- <h1>Título 1</h1>
+  <h2>Título 2</h2>
+  <h6>Título 6</h6>
+  <hr>
+  <p>Un párrafo de<br>
+    múltiples<br/>
+    líneas</p>
+  <div>1</div>
+  <div>2</div>
+  <a href="#ultimo-parrafo">Ir al último párrafo</a>
+  <a href="http://www.google.es" target="_blank">Ir a Google</a>
+  <p id="ultimo-parrafo">Pepete gelatooo tatata bala tu tatata bala tu daa poopayee belloo! Hahaha po kass poopayee pepete hana dul sae butt bee do bee do bee do belloo! Gelatooo. Baboiii hahaha pepete gelatooo aaaaaah underweaaar tank yuuu! Tatata bala tu potatoooo tank yuuu! Uuuhhh poopayee para tú uuuhhh pepete baboiii jiji baboiii po kass. Poopayee bananaaaa tank yuuu! Potatoooo. Bee do bee do bee do bappleees butt chasy tank yuuu! Tatata bala tu underweaaar potatoooo hahaha hahaha potatoooo.</p>
+  <ul>
+    <li>Harina</li>
+    <li>Leche</li>
+    <li>Arroz</li>
+    <li>Coca-cola</li>
+  </ul>
+  <ol>
+    <li>Paso 1</li>
+    <li>Paso 2</li>
+    <li>Paso 3</li>
+  </ol> -->
+  <table>
+    <thead>
+      <tr>
+        <th>Col 1</th>
+        <th>Col 2</th>
+        <th>Col 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>F1 C1</td>
+        <td>F1 C2</td>
+        <!-- <td>F1 C3</td> -->
+        <td rowspan="2">C3</td>
+      </tr>
+      <tr>
+        <td>F2 C1</td>
+        <td>F2 C2</td>
+        <!-- <td>F2 C3</td> -->
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2" id="sin-centrar">Total:</td>
+        <!-- <td></td> -->
+        <td>20</td>
+      </tr>
+    </tfoot>
+  </table>
+  <!-- <img src="https://i.imgflip.com/9ehk.jpg" alt="Batman vs Robin"> -->
+  <form action="micontrolador.rb" method="GET">
+    <fieldset>
+      <legend>Datos personales</legend>
+      <label for="">Nombre:</label>
+      <input name="nombre" type="text" minlength="2" maxlength="6">
+    </fieldset>
+    <fieldset>
+      <legend>Datos del pago</legend>
+      <label for="">Num. Tarjeta:</label>
+      <input type="text" pattern="([0-9]{4} ){3}[0-9]{4}">
+    </fieldset>
+    <label for="">Doname:</label>
+    <input type="number" value="20" min="10000" max="100000">
+    <input type="color" value="#ccddcc">
+    <input type="date">
+    <!-- <input name="miUrl" type="url"> -->
+    <fieldset>
+      <input type="checkbox" name="skills" value="js">JS
+      <input type="checkbox" name="skills" value="angular" checked>Angular
+      <input type="checkbox" name="skills" value="ruby">Ruby
+    </fieldset>
+    <fieldset>
+      <input type="radio" name="opcion" value="si" checked>Si
+      <input type="radio" name="opcion" value="no">No
+    </fieldset>
+    <input type="password">
+    <input type="email" required placeholder="a@a.es">
+    <button type="submit">Enviar</button>
+  </form>
+  <marquee behavior="" direction="">Esto no se usa ya!</marquee>
+</body>
+</html>

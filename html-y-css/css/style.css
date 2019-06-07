@@ -1,0 +1,187 @@
+/* Global: a todos los elementos */
+/* * {
+  text-decoration: line-through;
+} */
+
+/* De etiquetas h1 y p: a todos los elementos h1 y p */
+h1, p {
+  text-align: center;
+}
+
+/* De ID: al elemento que tiene el id importante */
+#input-valido {
+  border: 1px solid yellowgreen;
+}
+
+/* De Clase: a los elementos que tienen la clase importante */
+.importante {
+  background-color: yellow;
+  /* color: whitesmoke !important; */
+  color: whitesmoke;
+}
+
+.importante {
+  color: red;
+}
+
+/* De etiqueta+clase: a los elementos p que tienen la clase importante */
+p.importante {
+  color: blue;
+}
+
+/* De clase+clase+[...clases]: que tengan las clases indicadas */
+.titulo.importante {
+  text-decoration: underline blue;
+  text-decoration-style: dashed;
+}
+
+/* Hijo directo: el elemento está un nivel dentro del elemento padre */
+div > p {
+  font-size: 30px;
+}
+
+/* Descendiente: a los elementos que están dentro de otro (hijos directos, nietos, bisnietos...) */
+ul a {
+  text-decoration: none;
+}
+
+
+/* Con atributo: tiene el atributo disabled */
+input[disabled] {
+  background-color: darkgray;
+}
+
+a[href='www.netflix.com'] {
+  color: red;
+}
+
+/* El valor del atributo contiene algo (en este caso una 'a') */
+a[href*='a'] {
+  color: yellowgreen;
+}
+
+/* El valor del atributo empieza por algo (empiezan por http) */
+a[href^='http'] {
+  background-color: #aa328c;
+}
+
+/* El valor del atributo termina por algo (terminan por .es) */
+a[href$='.es'] {
+  text-decoration: underline;
+}
+
+/* Pseudo-clases: cuando el elemento coge un estado (hover, active, disabled, focus, visited...) */
+h1:hover {
+  font-size: 40px;
+}
+
+input:focus {
+  border: 3px dashed #caff07;
+}
+
+button:not([type='button']) {
+  border-radius: 10px;
+  background-color: orange;
+  font-weight: bold;
+  /* font-style: italic; */
+  color: white;
+  border: 1px solid blue;
+  height: 30px;
+}
+
+button:not([type="button"]):hover {
+  color: orange;
+  background-color: white;
+}
+
+
+/* Sombras */
+h2 {
+  text-shadow: 10px 5px 5px black;
+}
+
+#con-sombra {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 10px 5px 5px black;
+}
+
+ul > li {
+  list-style: none;
+  display: inline;
+  /* margin-top: 30px;
+  margin-bottom: 25px; */
+  /* margin-right: 30px;
+  margin-left: 5px; */
+  margin: 30px 30px 25px 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border: 1px solid black;
+}
+
+/* Overflow */
+div.caja {
+  width: 300px;
+  height: 400px;
+  border: 1px solid black;
+  overflow: scroll;
+}
+
+/* Transformaciones */
+img {
+  width: 30vh;
+  /* transform: rotate(90deg) translate(100px, 0px) scale(2, 0.5); */
+  /* transform: skew(30deg); */
+  /* transform: scale(2, 0.5); */
+  transform: rotate(0deg);
+  transition: width 0.5s, transform 1s;
+}
+
+/* Transiciones */
+img:hover {
+  transition: width 1s, transform 1s;
+  transform: rotate(90deg);
+  width: 60vh;
+}
+
+/* Animaciones */
+@keyframes zoom {
+  /* from {
+    width: 0px;
+    height: 0px;
+    background-color: red;
+  }
+  to {
+    height: 200px;
+    width: 200px;
+    background-color: white;
+  } */
+  0% {
+    width: 0px;
+    height: 0px;
+    background-color: red;
+  }
+  20% {
+    width: 20px;
+    background-color: blue;
+  }
+  50% {
+    width: 20px;
+    background-color: yellowgreen;
+  }
+  80% {
+    width: 90px;
+    background-color: black;
+  }
+}
+
+div.caja1 {
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  border: 1px solid blue;
+  animation-name: zoom;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}

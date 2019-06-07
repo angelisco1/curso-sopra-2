@@ -1,0 +1,27 @@
+@keyframes swing {
+  0% {
+    transform: rotate(-30deg);
+    color: black;
+  }
+  25% {
+    transform: rotate(30deg);
+    color: blue;
+  }
+  50% {
+    transform: rotate(-45deg);
+    color: red;
+  }
+  75% {
+    transform: rotate(45deg);
+    color: yellow;
+  }
+  100% {
+    transform: rotate(0deg);
+    color: white;
+  }
+}
+
+h1 {
+  text-align: center;
+  animation: swing 1.3s infinite;
+}
