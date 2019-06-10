@@ -29,7 +29,6 @@ getDatos('https://ejemplos-dc1c1.firebaseio.com/generos.json', (generos) => {
       alert(objPeliculas[id].join(', '));
     }
   });
-
 });
 
 // function getGeneros() {
