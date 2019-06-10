@@ -1,15 +1,19 @@
 function getGeneros () {
-  let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://ejemplos-dc1c1.firebaseio.com/generos.json');
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://ejemplos-dc1c1.firebaseio.com/generos.json');
 
-  xhr.addEventListener('readystatechange', () => {
-    if (xhr.status === 200 && xhr.readyState === 4) {
-      const generosConIds = JSON.parse(xhr.responseText);
-      pintarDesplegable(generosConIds);
-    }
-  })
+    xhr.addEventListener('readystatechange', () => {
+      if (xhr.status === 200 && xhr.readyState === 4) {
+        const generosConIds = JSON.parse(xhr.responseText);
+        // pintarDesplegable(generosConIds);
+        resolve(generosConIds)
+      }
+    })
 
-  xhr.send();
+    xhr.send();
+
+  });
 }
 
 function pintarDesplegable(opciones) {
@@ -23,7 +27,9 @@ function pintarDesplegable(opciones) {
   desplegable.innerHTML = opcionesHTML;
 }
 
-getGeneros();
+getGeneros().then((generos) => {
+  pintarDesplegable(generos);
+});
 
 let btnGuardar = document.getElementById('btn-guardar')
 btnGuardar.addEventListener('click', (event) => {
@@ -32,22 +38,36 @@ btnGuardar.addEventListener('click', (event) => {
   let genero = document.getElementById('desplegable-generos').value.trim();
 
   if (pelicula && genero) {
-    savePelicula(genero, pelicula);
+    savePelicula(genero, pelicula)
+      .then(() => {
+        Swal.fire({
+          text: 'Pelicula guardada correctamente...',
+          type: 'success'
+        })
+      });
   }
 })
 
+// savePelicula().then(() => {
+//   // Redirect
+// })
+
 function savePelicula(genero, pelicula) {
-  let xhr = new XMLHttpRequest();
-  xhr.open('POST', `https://ejemplos-dc1c1.firebaseio.com/peliculas/${genero}.json`);
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', `https://ejemplos-dc1c1.firebaseio.com/peliculas/${genero}.json`);
 
-  xhr.addEventListener('readystatechange', () => {
-    if (xhr.status === 200 && xhr.readyState === 4) {
-      Swal.fire({
-        text: 'Pelicula guardada correctamente...',
-        type: 'success'
-      })
-    }
+    xhr.addEventListener('readystatechange', () => {
+      if (xhr.status === 200 && xhr.readyState === 4) {
+        // Swal.fire({
+        //   text: 'Pelicula guardada correctamente...',
+        //   type: 'success'
+        // })
+        resolve();
+      }
+    })
+
+    xhr.send(JSON.stringify(pelicula));
+
   })
-
-  xhr.send(JSON.stringify(pelicula));
 }
