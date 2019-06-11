@@ -1,0 +1,20 @@
+<h1>Data Binding</h1>
+<h2>String Interpolation</h2>
+<p>Me llamo {{ nombre }}</p>
+
+<h2>Property Binding</h2>
+<input type="text" [placeholder]="nombre" [disabled]="!activadoModoEdicion">
+
+<h2>Event Binding</h2>
+<button type="button" (click)="changeModoEdicion()">Modo edición: {{ activadoModoEdicion ? 'activado' : 'desactivado' }}</button>
+
+<h2>Two Way Data Binding</h2>
+<input type="text" [(ngModel)]="nombre">
+<button type="button" (click)="resetNombre($event)">Vaciar nombre</button>
+
+<h2>Mi 2WayBinding</h2>
+<input type="text" (input)="changeNombre($event)" [value]="nombre">
+
+<h2>Referencias</h2>
+<input type="text" #refInput>
+<button type="button" (click)="mostrarValor(refInput.value)">Mostrar valor</button>

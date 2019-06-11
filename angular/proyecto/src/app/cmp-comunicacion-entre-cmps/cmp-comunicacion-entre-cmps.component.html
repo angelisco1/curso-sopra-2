@@ -1,0 +1,6 @@
+<h1>Componente Superior</h1>
+<p>Nombre Hijo1: {{nombreHijo1}}</p>
+<hr>
+<app-cmp-inferior1 (avisarCambio)="cambiarNombre($event)" [miNombre]="nombreHijo1"></app-cmp-inferior1>
+<hr>
+<app-cmp-inferior2 [nombreHermano1]="nombreHijo1"></app-cmp-inferior2>

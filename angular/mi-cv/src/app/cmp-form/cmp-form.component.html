@@ -1,0 +1,22 @@
+<h2>Rellena los datos</h2>
+<div>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" (input)="cambiarValor($event)">
+</div>
+<div>
+  <label for="apellidos">Apellidos:</label>
+  <input type="text" id="apellidos" (input)="cambiarValor($event)">
+</div>
+<div>
+  <label for="email">Email:</label>
+  <input type="text" id="email" (input)="cambiarValor($event)">
+</div>
+<div>
+  <label for="foto">Foto:</label>
+  <input type="text" id="foto" (input)="cambiarValor($event)">
+</div>
+<div>
+  <label for="skill">Skill:</label>
+  <input type="text" id="skill" #inputSkill>
+  <button type="button" (click)="addSkill(inputSkill.value)">Añadir skill</button>
+</div>
