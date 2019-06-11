@@ -31,11 +31,20 @@ getGeneros().then((generos) => {
   pintarDesplegable(generos);
 });
 
+function getDatosForm() {
+  let pelicula = document.getElementById('input-pelicula').value.trim();
+  let genero = document.getElementById('desplegable-generos').value.trim();
+  return {
+    pelicula: pelicula,
+    genero: genero
+  }
+}
+
 let btnGuardar = document.getElementById('btn-guardar')
 btnGuardar.addEventListener('click', (event) => {
   event.preventDefault();
-  let pelicula = document.getElementById('input-pelicula').value.trim();
-  let genero = document.getElementById('desplegable-generos').value.trim();
+
+  let {pelicula, genero} = getDatosForm();
 
   if (pelicula && genero) {
     savePelicula(genero, pelicula)
@@ -47,6 +56,27 @@ btnGuardar.addEventListener('click', (event) => {
       });
   }
 })
+
+let btnRedirect = document.getElementById('btn-guardar-redirect');
+btnRedirect.addEventListener('click', () => {
+  event.preventDefault();
+
+  let {pelicula, genero} = getDatosForm();
+
+  if (pelicula && genero) {
+    savePelicula(genero, pelicula)
+      .then(() => {
+        Swal.fire({
+          text: 'Pelicula guardada correctamente...',
+          type: 'success'
+        }).then(() => {
+          location.href = 'http://localhost:8080/index.html';
+        })
+        // Aquí no se pone porque cambia la página antes de pulsar el botón del modal.
+        // location.href = 'http://localhost:8080/index.html';
+      });
+  }
+});
 
 // savePelicula().then(() => {
 //   // Redirect
