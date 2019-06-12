@@ -8,6 +8,8 @@ import { CmpDataBindingComponent } from './cmp-data-binding/cmp-data-binding.com
 import { CmpComunicacionEntreCmpsComponent } from './cmp-comunicacion-entre-cmps/cmp-comunicacion-entre-cmps.component';
 import { CmpInferior1Component } from './cmp-comunicacion-entre-cmps/cmp-inferior1/cmp-inferior1.component';
 import { CmpInferior2Component } from './cmp-comunicacion-entre-cmps/cmp-inferior2/cmp-inferior2.component';
+import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
+import { DoblePipe } from './cmp-pipes/doble.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { CmpInferior2Component } from './cmp-comunicacion-entre-cmps/cmp-inferio
     CmpComunicacionEntreCmpsComponent,
     CmpInferior1Component,
     CmpInferior2Component,
+    CmpPipesComponent,
+    DoblePipe,
   ],
   imports: [
     BrowserModule,
