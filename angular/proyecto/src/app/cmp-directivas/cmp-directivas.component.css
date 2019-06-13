@@ -1,0 +1,28 @@
+.letraAzul {
+  color: blue;
+}
+
+.subrayado {
+  text-decoration: underline;
+}
+
+@keyframes anim1 {
+  30% {
+    transform: rotate(-45deg);
+  }
+  60% {
+    transform: rotate(45deg);
+  }
+}
+
+.aplicarAnim1 {
+  /* animation: anim1 0.4s; */
+  animation-name: anim1;
+  animation-duration: 0.4s;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+}
+
+p::after {
+  content: "..."
+}

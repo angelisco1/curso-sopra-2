@@ -1,0 +1,21 @@
+h1 {
+  text-align: center;
+}
+
+.cardList {
+  background-color: lightgoldenrodyellow;
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid black;
+  justify-content: space-evenly;
+  /* align-items: center; */
+}
+
+@media only screen and (max-width: 550px) {
+  .cardList {
+    background-color: blue;
+    width: 350px;
+  }
+}

@@ -8,6 +8,7 @@
 <p>{{ 'Que viene el coco...' | doble }}</p>
 <p>{{ 'Que viene el coco...' | doble:'e' }}</p>
 <p>{{ 'Que viene el coco...' | doble:'e':'!!!' }}</p>
+<p>{{ 'Que viene el coco...' | reverse }}</p>
 
 <p>{{ precio }}</p>
 <p>{{ precio | currency }}</p>
@@ -17,3 +18,17 @@
 <p>{{ fecha }}</p>
 <p>{{ fecha | date }}</p>
 <p>{{ fecha | date:'dd/MM/yyyy' }}</p>
+
+<p>{{ lema | ocultar:['no', 'soy'] }}</p>
+<p>{{ lema | ocultar:['no', 'soy']:'_' }}</p>
+
+<ul>
+  <li *ngFor="let mascota of mascotas | filtro:'p'">{{mascota}}</li>
+</ul>
+<input type="text" (change)="mascotas.push($event.target.value)">
+<ul>
+  <li *ngFor="let mascota of mascotas">{{mascota}}</li>
+</ul>
+
+<h2>Pipe async</h2>
+<p>Mensaje: {{ msg | async }}</p>

@@ -1,0 +1,7 @@
+<!-- <div class="card" [ngClass]="{inscrito: oferta.inscrito}"> -->
+<div class="card" [ngStyle]="{backgroundColor: (oferta.inscrito ? 'gray' : 'white')}">
+  <h3>{{oferta.titulo}}</h3>
+  <img [src]="oferta.logo" alt="">
+  <p>{{oferta.descripcion}}</p>
+  <button type="button" (click)="inscribirEnOferta()">Inscribirme</button>
+</div>
