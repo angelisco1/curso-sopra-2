@@ -17,11 +17,17 @@ export class TareaComponent implements OnInit {
   }
 
   eliminar() {
-    this._tareasService.deleteTarea(this.tarea.id)
+    this._tareasService.deleteTarea(this.tarea.id).subscribe(() => {
+      console.log('Eliminada');
+      this._tareasService.tareasCambiadas.emit(true);
+    })
   }
 
   completar() {
-    this._tareasService.completeTarea(this.tarea.id)
+    this._tareasService.completeTarea(this.tarea).subscribe(() => {
+      console.log('Actualizada')
+      this._tareasService.tareasCambiadas.emit(true);
+    })
   }
 
 }

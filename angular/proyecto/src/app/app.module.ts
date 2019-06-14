@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -21,6 +22,7 @@ import { CardJobComponent } from './cmp-ofertas-trabajo/card-job/card-job.compon
 import { CmpServiciosComponent } from './cmp-servicios/cmp-servicios.component';
 import { CmpAComponent } from './cmp-servicios/cmp-a/cmp-a.component';
 import { CmpBComponent } from './cmp-servicios/cmp-b/cmp-b.component';
+import { CmpHttpComponent } from './cmp-http/cmp-http.component';
 
 @NgModule({
   declarations: [
@@ -43,10 +45,12 @@ import { CmpBComponent } from './cmp-servicios/cmp-b/cmp-b.component';
     CmpServiciosComponent,
     CmpAComponent,
     CmpBComponent,
+    CmpHttpComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

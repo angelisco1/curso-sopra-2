@@ -15,8 +15,15 @@ export class FormComponent implements OnInit {
   }
 
   add(nombre: string, completa: boolean) {
-    const tarea = new Tarea(this._tareasService.useId(), nombre, completa);
-    this._tareasService.addTarea(tarea);
+    // const tarea = new Tarea(this._tareasService.useId(), nombre, completa);
+    const tarea = {
+      nombre: nombre,
+      completa: completa
+    };
+    this._tareasService.addTarea(tarea).subscribe(() => {
+      console.log('Guardada!');
+      this._tareasService.tareasCambiadas.emit(true);
+    });
   }
 
 }

@@ -12,11 +12,25 @@ export class ListaComponent implements OnInit {
 
   constructor(private _tareasService: TareasService) { }
 
+  getTareas() {
+    this._tareasService.tareas.subscribe((tareas) => {
+      this.tareas = tareas;
+    })
+  }
+
   ngOnInit() {
-    this.tareas = this._tareasService.tareas;
-    this._tareasService.tareasCambiadas.subscribe(nuevaLista => {
-      this.tareas = nuevaLista;
+    // this.tareas = this._tareasService.tareas;
+    // this._tareasService.tareas.subscribe((tareas) => {
+    //   this.tareas = tareas;
+    // })
+    this.getTareas();
+
+    this._tareasService.tareasCambiadas.subscribe(() => {
+      this.getTareas();
     });
+    // this._tareasService.tareasCambiadas.subscribe(nuevaLista => {
+    //   this.tareas = nuevaLista;
+    // });
   }
 
 }
