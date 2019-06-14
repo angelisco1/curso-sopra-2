@@ -1,0 +1,14 @@
+<h2>CMP A</h2>
+<div>
+  <input type="text" #inputA>
+  <button type="button" (click)="add(inputA.value)">Añadir</button>
+
+
+  <button type="button" (click)="emitir(inputA.value)">Emitir</button>
+
+
+</div>
+<h3>Mis datos</h3>
+<ul>
+  <li *ngFor="let dato of datos">{{dato}}</li>
+</ul>

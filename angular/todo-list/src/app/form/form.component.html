@@ -1,0 +1,11 @@
+<div>
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" #inputNombre>
+  </div>
+  <div>
+    <label for="completa">Completa:</label>
+    <input type="checkbox" id="completa" #inputCompleta>
+  </div>
+  <button type="button" (click)="add(inputNombre.value, inputCompleta.checked)">Añadir</button>
+</div>

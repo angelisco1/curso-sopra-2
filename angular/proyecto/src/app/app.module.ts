@@ -18,6 +18,9 @@ import { MarcarDirective } from './cmp-directivas/marcar.directive';
 import { PowerModeDirective } from './cmp-directivas/power-mode.directive';
 import { CmpOfertasTrabajoComponent } from './cmp-ofertas-trabajo/cmp-ofertas-trabajo.component';
 import { CardJobComponent } from './cmp-ofertas-trabajo/card-job/card-job.component';
+import { CmpServiciosComponent } from './cmp-servicios/cmp-servicios.component';
+import { CmpAComponent } from './cmp-servicios/cmp-a/cmp-a.component';
+import { CmpBComponent } from './cmp-servicios/cmp-b/cmp-b.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { CardJobComponent } from './cmp-ofertas-trabajo/card-job/card-job.compon
     PowerModeDirective,
     CmpOfertasTrabajoComponent,
     CardJobComponent,
+    CmpServiciosComponent,
+    CmpAComponent,
+    CmpBComponent,
   ],
   imports: [
     BrowserModule,
